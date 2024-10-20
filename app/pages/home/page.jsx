@@ -1,15 +1,17 @@
 import React from 'react'
-import { Search, LogOut, LayoutDashboard, MessageSquarePlus, Save, Film, Globe } from 'lucide-react'
+import { Search, LogOut, LayoutDashboard, MessageSquarePlus, Globe, List, BriefcaseBusiness} from 'lucide-react'
 
 export default function HomePage() {
   return (
     <div className="flex h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
       {/* Sidebar */}
       <div className="w-64 bg-gray-900 bg-opacity-50 p-6 flex flex-col justify-between border-r border-green-900/20">
-        <div className="space-y-4">
-          <SidebarButton icon={<LogOut className="w-6 h-6" />} label="Sign Out" />
+        <div className="flex-grow space-y-4">
           <SidebarButton icon={<LayoutDashboard className="w-6 h-6" />} label="Dashboard" />
+        </div>
+        <div className="mt-auto space-y-4">
           <SidebarButton icon={<MessageSquarePlus className="w-6 h-6" />} label="New Chat" />
+          <SidebarButton icon={<LogOut className="w-6 h-6" />} label="Sign Out" />
         </div>
       </div>
 
@@ -28,13 +30,13 @@ export default function HomePage() {
             <Search className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-500 w-6 h-6" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
-            <ActionCard icon={<Save className="w-6 h-6" />} label="Saved Prompt Templates" />
-            <ActionCard icon={<Film className="w-6 h-6" />} label="Media Type Selection" />
-            <ActionCard icon={<Globe className="w-6 h-6" />} label="Multilingual Support" />
+            <ActionCard icon={<List className="w-6 h-6" />} label="Manage Jobs, Avoid Clutter" />
+            <ActionCard icon={<BriefcaseBusiness className="w-6 h-6" />} label="Get Jobs That Matters" />
+            <ActionCard icon={<Globe className="w-6 h-6" />} label="5+ Job Portal Supported" />
           </div>
         </div>
         <footer className="w-full text-center text-sm text-gray-500 mt-8">
-          Powered by JobSavvy
+          Made by Anurag Kainth
         </footer>
       </div>
     </div>
