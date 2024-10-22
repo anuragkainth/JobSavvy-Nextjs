@@ -1,20 +1,14 @@
 import React from 'react'
-import { Search, LogOut, LayoutDashboard, MessageSquarePlus, Globe, List, BriefcaseBusiness} from 'lucide-react'
+import { Search, Globe, List, BriefcaseBusiness } from 'lucide-react'
+import { SideBar } from '../../components/layout/SideBar'
+import { ActionCard } from '../../components/ui/HomeActionCard'
+import { Footer } from '@/app/components/layout/Footer'
 
 export default function HomePage() {
   return (
     <div className="flex h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
       {/* Sidebar */}
-      <div className="w-64 bg-gray-900 bg-opacity-50 p-6 flex flex-col justify-between border-r border-green-900/20">
-        <div className="flex-grow space-y-4">
-          <SidebarButton icon={<LayoutDashboard className="w-6 h-6" />} label="Dashboard" />
-        </div>
-        <div className="mt-auto space-y-4">
-          <SidebarButton icon={<MessageSquarePlus className="w-6 h-6" />} label="New Chat" />
-          <SidebarButton icon={<LogOut className="w-6 h-6" />} label="Sign Out" />
-        </div>
-      </div>
-
+      <SideBar />
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-between p-8 relative overflow-auto">
         <div className="w-full max-w-4xl flex flex-col items-center justify-center flex-grow">
@@ -35,28 +29,8 @@ export default function HomePage() {
             <ActionCard icon={<Globe className="w-6 h-6" />} label="5+ Job Portal Supported" />
           </div>
         </div>
-        <footer className="w-full text-center text-sm text-gray-500 mt-8">
-          Made by Anurag Kainth
-        </footer>
+        <Footer />
       </div>
     </div>
-  )
-}
-
-function SidebarButton({ icon, label }) {
-  return (
-    <button className="w-full bg-gray-800 bg-opacity-50 hover:bg-opacity-75 text-left py-4 px-6 rounded-lg transition duration-300 ease-in-out flex items-center space-x-4 shadow-lg hover:shadow-green-400/20 hover:text-green-400 group">
-      {React.cloneElement(icon, { className: "w-6 h-6 group-hover:text-green-400" })}
-      <span className="font-medium">{label}</span>
-    </button>
-  )
-}
-
-function ActionCard({ icon, label }) {
-  return (
-    <button className="bg-gray-800 bg-opacity-50 hover:bg-opacity-75 p-6 rounded-lg transition duration-300 ease-in-out flex flex-col items-center justify-center space-y-4 shadow-lg hover:shadow-green-400/20 hover:text-green-400 group">
-      {React.cloneElement(icon, { className: "w-10 h-10 group-hover:text-green-400" })}
-      <span className="font-medium text-center">{label}</span>
-    </button>
   )
 }
